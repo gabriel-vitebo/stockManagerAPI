@@ -24,7 +24,7 @@ Se houver a necessidade de associar os produtos a um usuário, a entidade **Usu�
 
 ## Casos de Uso (Use Cases)
 
-[ ] Cadastrar Produto (CreateProductUseCase)
+[ ] Cadastrar Produto (CreateProduct)
 O usuário poderá cadastrar um novo produto informando:
 
    - [ ] Título do produto
