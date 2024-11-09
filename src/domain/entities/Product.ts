@@ -1,7 +1,6 @@
 import { Entity } from '../../core/entities/entity'
 import { UniqueEntityId } from '../../core/entities/unique-entity-id'
 import { Optional } from '../../core/types/optional'
-import { ProductRepository } from '../repositories/product-repository'
 
 interface ProductProps {
   title: string
