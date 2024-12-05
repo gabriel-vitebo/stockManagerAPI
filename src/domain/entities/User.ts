@@ -1,10 +1,12 @@
 import { Entity } from '../../core/entities/entity'
 import { Optional } from '../../core/types/optional'
 import { UniqueEntityId } from '../../core/entities/unique-entity-id'
+import { hash } from 'bcryptjs'
 
 interface UserProps {
   name: string
   email: string
+  password: string
   createdAt: Date
   updatedAt?: Date
 }
@@ -22,8 +24,17 @@ export class User extends Entity<UserProps> {
     return this.props.email
   }
 
+  get password() {
+    return this.props.password
+  }
+
   set name(name: string) {
     this.props.name = name
+    this.updateDate()
+  }
+
+  set password(password: string) {
+    this.props.password = password
     this.updateDate()
   }
 
@@ -31,11 +42,17 @@ export class User extends Entity<UserProps> {
     email === this.email && null
   }
 
-  static create(props: Optional<UserProps, 'createdAt'>, id?: UniqueEntityId) {
+  async passwordHash(password: string) {
+    return await hash(password, 10)
+  }
+
+  static async create(props: Optional<UserProps, 'createdAt'>, id?: UniqueEntityId) {
+    const hashedPassword = await passwordHash(props.password)
     const user = new User(
       {
         ...props,
         createdAt: new Date(),
+        password: hashedPassword,
       },
       id,
     )
