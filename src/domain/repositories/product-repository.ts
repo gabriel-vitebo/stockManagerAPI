@@ -1,5 +1,5 @@
-import { Product } from '../entities/Product'
+import { Prisma } from '@prisma/client'
 
 export interface ProductRepository {
-  create(product: Product): Promise<void>
+  create(data: Prisma.ProductUncheckedCreateInput): Promise<void>
 }

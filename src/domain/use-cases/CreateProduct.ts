@@ -1,35 +1,50 @@
-import { Product } from '../entities/Product'
 import { ProductRepository } from '../repositories/product-repository'
-import { UniqueEntityId } from '../../core/entities/unique-entity-id'
 
 interface CreateProductUseCaseRequest {
-  userId: string
   title: string
+  description: string
   price: string
   initialAmount: number
-  description: string
+  currentQuantity: number
 }
 
-export class CreateProduct {
-  constructor(private productRepository: ProductRepository) {}
+interface CreateProductUseCaseResponse {
+  response: {
+    title: string
+    description: string
+    price: string
+    initialAmount: number
+    currentQuantity: number
+  }
+}
+
+export class CreateProductUseCase {
+  constructor(private productRepository: ProductRepository) { }
 
   async execute({
-    userId,
     title,
     price,
-    initialAmount,
     description,
-  }: CreateProductUseCaseRequest) {
-    const product = Product.create({
+    initialAmount,
+    currentQuantity,
+  }: CreateProductUseCaseRequest): Promise<CreateProductUseCaseResponse> {
+    await this.productRepository.create({
+      userId: '23dfe3c4-a74d-4abb-903f-56ab4dd4aaf1',
       title,
       price,
       description,
       initialAmount,
-      userId: new UniqueEntityId(userId),
+      currentQuantity: currentQuantity ?? initialAmount,
     })
 
-    await this.productRepository.create(product)
-
-    return { product }
+    return {
+      response: {
+        title,
+        description,
+        price,
+        initialAmount,
+        currentQuantity,
+      },
+    }
   }
 }
