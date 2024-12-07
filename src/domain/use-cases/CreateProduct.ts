@@ -34,7 +34,7 @@ export class CreateProductUseCase {
       price,
       description,
       initialAmount,
-      currentQuantity: currentQuantity ?? initialAmount,
+      currentQuantity,
     })
 
     return {

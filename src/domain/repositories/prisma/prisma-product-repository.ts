@@ -6,4 +6,14 @@ export class PrismaProductRepository implements ProductRepository {
   async create(data: Prisma.ProductUncheckedCreateInput) {
     await prisma.product.create({ data })
   }
+
+  async fetchAll(userId: string) {
+    const products = await prisma.product.findMany({
+      where: {
+        userId,
+      },
+    })
+
+    return products
+  }
 }
