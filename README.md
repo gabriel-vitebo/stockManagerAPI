@@ -32,13 +32,13 @@ O usuário poderá cadastrar um novo produto informando:
 
 Ao cadastrar o produto, a **quantidade atual** será igual à **quantidade inicial**, e o **status** do produto será calculado.
 
-[ ] Editar Produto (EditProductUseCase)
+[x] Editar Produto (EditProductUseCase)
 O usuário poderá editar as informações de um produto, como:
 
-- [ ] Título
-- [ ] Preço
-- [ ] Quantidade inicial
-- [ ] Descrição
+- [x] Título
+- [x] Preço
+- [x] Quantidade inicial
+- [x] Descrição
 
 Se a **quantidade inicial** for atualizada, a **quantidade atual** será redefinida para o novo valor da quantidade inicial.
 

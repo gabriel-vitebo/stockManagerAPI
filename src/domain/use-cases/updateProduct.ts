@@ -10,6 +10,7 @@ interface UpdateProductUseCaseRequest {
 
 interface UpdateProductUseCaseResponse {
   response: {
+    id: string
     title: string
     description: string
     price: string
@@ -49,6 +50,7 @@ export class UpdateProductUseCase {
 
     return {
       response: {
+        id: updatedProduct.id,
         title: updatedProduct.title,
         description: updatedProduct.description,
         price: updatedProduct.price,

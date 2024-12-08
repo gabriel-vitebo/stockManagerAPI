@@ -6,6 +6,7 @@ interface FetchAllProductUseCaseRequest {
 
 interface ProductResponse {
   response: {
+    id: string
     title: string
     description: string
     price: string
@@ -23,6 +24,7 @@ export class FetchAllProductUseCase {
     const products = await this.productRepository.fetchAll(userId)
 
     const response = products.map((product) => ({
+      id: product.id,
       title: product.title,
       description: product.description,
       price: product.price,
