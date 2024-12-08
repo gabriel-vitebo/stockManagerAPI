@@ -2,8 +2,6 @@
 
 Este documento descreve as funcionalidades e estrutura necessárias para o desenvolvimento do back-end de um sistema de gerenciamento de estoque de produtos, utilizando Node.js com TypeScript e aplicando o modelo DDD (Domain-Driven Design).
 
-## Entidades
-
 ### Produto (Product)
 A entidade **Produto** representa um item no estoque, com as seguintes propriedades:
 
@@ -24,13 +22,13 @@ Se houver a necessidade de associar os produtos a um usuário, a entidade **Usu�
 
 ## Casos de Uso (Use Cases)
 
-[ ] Cadastrar Produto (CreateProduct)
+[x] Cadastrar Produto (CreateProduct)
 O usuário poderá cadastrar um novo produto informando:
 
-   - [ ] Título do produto
-   - [ ] Preço do produto 
-   - [ ] Quantidade inicial do produto
-   - [ ] Descrição do produto
+   - [x] Título do produto
+   - [x] Preço do produto 
+   - [x] Quantidade inicial do produto
+   - [x] Descrição do produto
 
 Ao cadastrar o produto, a **quantidade atual** será igual à **quantidade inicial**, e o **status** do produto será calculado.
 
@@ -44,13 +42,13 @@ O usuário poderá editar as informações de um produto, como:
 
 Se a **quantidade inicial** for atualizada, a **quantidade atual** será redefinida para o novo valor da quantidade inicial.
 
-[ ] Listar Todos os Produtos (ListAllProductsUseCase)
+[x] Listar Todos os Produtos (ListAllProductsUseCase)
 O usuário poderá listar todos os produtos cadastrados, com os seguintes detalhes:
 
-- [ ] Título
-- [ ] Preço
-- [ ] Quantidade atual
-- [ ] Status (Em estoque, Pouco estoque, Fora de estoque)
+- [x] Título
+- [x] Preço
+- [x] Quantidade atual
+- [x] Status (Em estoque, Pouco estoque, Fora de estoque)
 
 [ ] Filtrar Produtos (FilterProductsUseCase)
 O usuário poderá filtrar os produtos cadastrados de acordo com:
