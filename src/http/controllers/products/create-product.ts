@@ -12,10 +12,11 @@ export async function createProduct(
     description: z.string(),
     price: z.string(),
     initialAmount: z.number(),
-    currentQuantity: z.number(),
+    currentQuantity: z.number().optional(),
+    userId: z.string(),
   })
 
-  const { title, description, price, initialAmount, currentQuantity } =
+  const { title, description, price, initialAmount, currentQuantity, userId } =
     createProductBodySchema.parse(request.body)
 
   try {
@@ -28,6 +29,7 @@ export async function createProduct(
       price,
       initialAmount,
       currentQuantity,
+      userId,
     })
   } catch (error) {
     return reply.status(409).send()

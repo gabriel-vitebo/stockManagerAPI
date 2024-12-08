@@ -7,6 +7,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum ProductStatus {
+  IN_STOCK
+  LOW_STOCK
+  OUT_OF_STOCK
+}
+
 model User {
   id            String    @id @default(uuid())
   name          String
@@ -19,13 +25,14 @@ model User {
 }
 
 model Product {
-  id              String   @id @default(uuid())
+  id              String        @id @default(uuid())
   title           String
   price           String
   description     String
   initialAmount   Decimal
   currentQuantity Decimal
-  createdAt       DateTime @default(now())
+  status          ProductStatus @default(IN_STOCK)
+  createdAt       DateTime      @default(now())
 
   user   User   @relation(fields: [userId], references: [id])
   userId String

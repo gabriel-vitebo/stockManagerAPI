@@ -1,11 +1,19 @@
+import { calculateStatus } from '@/utils/calculateStatus'
 import { ProductRepository } from '../repositories/product-repository'
+
+enum ProductStatus {
+  OUT_OF_STOCK = 'OUT_OF_STOCK',
+  LOW_STOCK = 'LOW_STOCK',
+  IN_STOCK = 'IN_STOCK',
+}
 
 interface CreateProductUseCaseRequest {
   title: string
   description: string
   price: string
   initialAmount: number
-  currentQuantity: number
+  currentQuantity?: number
+  userId: string
 }
 
 interface CreateProductUseCaseResponse {
@@ -15,6 +23,7 @@ interface CreateProductUseCaseResponse {
     price: string
     initialAmount: number
     currentQuantity: number
+    status: ProductStatus
   }
 }
 
@@ -27,14 +36,20 @@ export class CreateProductUseCase {
     description,
     initialAmount,
     currentQuantity,
+    userId,
   }: CreateProductUseCaseRequest): Promise<CreateProductUseCaseResponse> {
+    const finalCurrentQuantity = currentQuantity ?? initialAmount
+
+    const status = calculateStatus(initialAmount, finalCurrentQuantity)
+
     await this.productRepository.create({
-      userId: '615f0013-4866-4e78-968a-be5db2c6b033',
+      userId,
       title,
       price,
       description,
       initialAmount,
-      currentQuantity,
+      currentQuantity: finalCurrentQuantity,
+      status,
     })
 
     return {
@@ -43,7 +58,8 @@ export class CreateProductUseCase {
         description,
         price,
         initialAmount,
-        currentQuantity,
+        currentQuantity: finalCurrentQuantity,
+        status,
       },
     }
   }
