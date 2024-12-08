@@ -35,6 +35,7 @@ export async function updateProduct(
       initialAmount,
     })
   } catch (error) {
+    console.error(error)
     return reply.status(409).send()
   }
 

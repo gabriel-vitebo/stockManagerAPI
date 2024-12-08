@@ -35,6 +35,7 @@ export class UpdateProductUseCase {
     }
 
     const updatedProduct = await this.productRepository.update({
+      id,
       title: title ?? currentProduct.title,
       price: price ?? currentProduct.price,
       initialAmount: initialAmount ?? currentProduct.initialAmount,

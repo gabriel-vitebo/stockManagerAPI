@@ -29,7 +29,7 @@ export class CreateProductUseCase {
     currentQuantity,
   }: CreateProductUseCaseRequest): Promise<CreateProductUseCaseResponse> {
     await this.productRepository.create({
-      userId: '23dfe3c4-a74d-4abb-903f-56ab4dd4aaf1',
+      userId: '615f0013-4866-4e78-968a-be5db2c6b033',
       title,
       price,
       description,
