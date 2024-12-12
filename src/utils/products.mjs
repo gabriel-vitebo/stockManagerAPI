@@ -1,0 +1,180 @@
+export const productsDefault = [
+  {
+    title: 'Mouse Óptico USB',
+    description: 'Mouse com sensor óptico de alta precisão, conexão USB.',
+    price: '29.90',
+    initialAmount: 50,
+  },
+  {
+    title: 'Teclado Mecânico RGB',
+    description: 'Teclado mecânico com iluminação RGB, switches Blue.',
+    price: '299.90',
+    initialAmount: 20,
+  },
+  {
+    title: 'Monitor LED 24 polegadas',
+    description: 'Monitor Full HD de 24 polegadas com painel IPS.',
+    price: '899.90',
+    initialAmount: 15,
+  },
+  {
+    title: 'Headset Gamer',
+    description: 'Headset com som surround 7.1, microfone ajustável.',
+    price: '199.90',
+    initialAmount: 25,
+  },
+  {
+    title: 'Notebook Core i5',
+    description: 'Notebook com processador Core i5, 8GB RAM, SSD 256GB.',
+    price: '3499.90',
+    initialAmount: 10,
+  },
+  {
+    title: 'Webcam Full HD',
+    description: 'Webcam com resolução 1080p e microfone embutido.',
+    price: '149.90',
+    initialAmount: 30,
+  },
+  {
+    title: 'Impressora Multifuncional',
+    description: 'Impressora a jato de tinta com scanner e Wi-Fi integrado.',
+    price: '499.90',
+    initialAmount: 8,
+  },
+  {
+    title: 'Cadeira Gamer',
+    description: 'Cadeira ergonômica com ajuste de altura e inclinação.',
+    price: '1199.90',
+    initialAmount: 5,
+  },
+  {
+    title: 'Placa de Vídeo RTX 3060',
+    description: 'Placa de vídeo para jogos com 12GB de memória GDDR6.',
+    price: '2599.90',
+    initialAmount: 7,
+  },
+  {
+    title: 'SSD 1TB',
+    description: 'SSD de alta performance com 1TB de armazenamento.',
+    price: '499.90',
+    initialAmount: 20,
+  },
+  {
+    title: 'Fonte 650W 80 Plus Bronze',
+    description:
+      'Fonte de alimentação para PCs com certificação 80 Plus Bronze.',
+    price: '299.90',
+    initialAmount: 12,
+  },
+  {
+    title: 'Gabinete ATX',
+    description: 'Gabinete para PC com painel lateral de vidro temperado.',
+    price: '349.90',
+    initialAmount: 10,
+  },
+  {
+    title: 'Memória RAM 16GB DDR4',
+    description: 'Módulo de memória RAM DDR4 com 3200MHz de frequência.',
+    price: '399.90',
+    initialAmount: 25,
+  },
+  {
+    title: 'Switch Gigabit Ethernet',
+    description: 'Switch com 8 portas Gigabit para rede local.',
+    price: '199.90',
+    initialAmount: 15,
+  },
+  {
+    title: 'Roteador Wi-Fi Dual Band',
+    description: 'Roteador com suporte a 2.4GHz e 5GHz, alcance estendido.',
+    price: '249.90',
+    initialAmount: 20,
+  },
+  {
+    title: 'Pendrive 64GB',
+    description: 'Pendrive USB 3.0 com alta velocidade de transferência.',
+    price: '49.90',
+    initialAmount: 50,
+  },
+  {
+    title: 'HD Externo 2TB',
+    description: 'HD externo portátil com 2TB de capacidade de armazenamento.',
+    price: '599.90',
+    initialAmount: 10,
+  },
+  {
+    title: 'Cooler para CPU',
+    description:
+      'Cooler para processador com dissipador de calor e fan de 120mm.',
+    price: '159.90',
+    initialAmount: 15,
+  },
+  {
+    title: 'Cabo HDMI 2.0 - 2m',
+    description: 'Cabo HDMI 2.0 com suporte a 4K e HDR.',
+    price: '39.90',
+    initialAmount: 50,
+  },
+  {
+    title: 'Adaptador USB-C para HDMI',
+    description: 'Adaptador para conectar dispositivos USB-C a monitores HDMI.',
+    price: '89.90',
+    initialAmount: 30,
+  },
+  {
+    title: 'Notebook Core i7',
+    description: 'Notebook com processador Core i7, 16GB RAM, SSD 512GB.',
+    price: '5999.90',
+    initialAmount: 5,
+  },
+  {
+    title: 'Mousepad Gamer XL',
+    description: 'Mousepad tamanho extra grande com superfície de tecido.',
+    price: '99.90',
+    initialAmount: 40,
+  },
+  {
+    title: 'Teclado Wireless',
+    description: 'Teclado sem fio compacto com conexão Bluetooth.',
+    price: '149.90',
+    initialAmount: 20,
+  },
+  {
+    title: 'Base para Notebook com Cooler',
+    description: 'Base ajustável para notebook com cooler integrado.',
+    price: '199.90',
+    initialAmount: 10,
+  },
+  {
+    title: 'Placa Mãe ATX',
+    description:
+      'Placa mãe com chipset Z690 para processadores Intel de 12ª geração.',
+    price: '1099.90',
+    initialAmount: 7,
+  },
+  {
+    title: 'Smartwatch',
+    description:
+      'Relógio inteligente com monitoramento de saúde e notificações.',
+    price: '499.90',
+    initialAmount: 15,
+  },
+  {
+    title: 'Carregador Portátil 10.000mAh',
+    description: 'Power bank com suporte a carregamento rápido.',
+    price: '129.90',
+    initialAmount: 30,
+  },
+  {
+    title: 'Fone de Ouvido Bluetooth',
+    description: 'Fone de ouvido sem fio com cancelamento de ruído.',
+    price: '349.90',
+    initialAmount: 20,
+  },
+  {
+    title: 'Tablet 10 polegadas',
+    description: 'Tablet com tela de 10 polegadas e 64GB de armazenamento.',
+    price: '1499.90',
+    initialAmount: 10,
+  },
+]
