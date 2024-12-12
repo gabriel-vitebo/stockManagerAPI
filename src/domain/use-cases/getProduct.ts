@@ -7,8 +7,8 @@ enum ProductStatus {
   IN_STOCK = 'IN_STOCK',
 }
 
-interface FetchAllProductUseCaseRequest {
-  userId: string
+interface GetProductUseCaseRequest {
+  id: string
 }
 
 interface ProductResponse {
@@ -20,18 +20,20 @@ interface ProductResponse {
     initialAmount: number
     currentQuantity: number
     status: ProductStatus
-  }[]
+  }
 }
 
-export class FetchAllProductUseCase {
+export class GetProductUseCase {
   constructor(private productRepository: ProductRepository) { }
 
-  async execute({
-    userId,
-  }: FetchAllProductUseCaseRequest): Promise<ProductResponse> {
-    const products = await this.productRepository.fetchAll(userId)
+  async execute({ id }: GetProductUseCaseRequest): Promise<ProductResponse> {
+    const product = await this.productRepository.getById(id)
 
-    const response = products.map((product) => ({
+    if (!product) {
+      throw new Error('Product not found')
+    }
+
+    const response = {
       id: product.id,
       title: product.title,
       description: product.description,
@@ -42,7 +44,7 @@ export class FetchAllProductUseCase {
         Number(product.initialAmount),
         Number(product.currentQuantity),
       ),
-    }))
+    }
 
     return { response }
   }
