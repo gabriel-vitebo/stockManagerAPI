@@ -14,4 +14,5 @@ export interface ProductRepository {
   } | null>
   fetchAll(userId: string): Promise<Product[]>
   update(data: Prisma.ProductUncheckedCreateInput): Promise<Product>
+  delete(id: string): Promise<void>
 }

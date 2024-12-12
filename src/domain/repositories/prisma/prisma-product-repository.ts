@@ -3,6 +3,14 @@ import { Prisma } from '@prisma/client'
 import { ProductRepository } from '../product-repository'
 
 export class PrismaProductRepository implements ProductRepository {
+  async delete(id: string) {
+    await prisma.product.delete({
+      where: {
+        id,
+      },
+    })
+  }
+
   async getById(id: string) {
     const product = await prisma.product.findUnique({
       where: {
